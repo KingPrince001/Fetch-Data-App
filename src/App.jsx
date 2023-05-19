@@ -58,7 +58,7 @@ function App() {
             <p>Country: {university.country}</p>
             {/* <a href="">Website: {university.web_pages[0]}</a> */}
             <p>website: <a href="">{university.web_pages[0]}</a></p>
-            {/* <p>Website: {university.web_pages[0]}</p> */}
+           
             <hr />
           </div>
         ))
