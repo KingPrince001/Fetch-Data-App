@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+}
+.head-section {
+    width: 100%;
+    margin: 30px 30%;
+}
+button , input {
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+
+}
+button {
+    background-color: #0d6efd;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+margin: 10px;
+}
+button:hover {
+    background-color: #0b5ed7;
+
+}
+input:hover:focus {
+    background-color: #0b5ed7;
+    color: white;
+
+}
+input {
+    background-color: #f2f2f2;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 1px solid #0d6efd;
+
+
+}
+.container {
+display: flex;
+gap: 50px;
+/* border: 1px solid; */
+width: 700px;
+margin: 30px auto;
+border-radius: 5px;
+height: 80px;
+padding: 20px;
+background-color: white;
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+}
+.numberOFUniversities {
+    width: fit-content;
+    margin: 10px auto;
+    /* height: 80px; */
+    padding: 15px;
+    border: 1px solid #0d6efd;
+    border-radius: 5px;
+    
+
+}
+ .error-message {
+    width: fit-content;
+    margin: 150px auto;
+    padding: 5px;
+    border: 2px solid red;
+    border-radius: 5px;
+    background-color: #ffdddd;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+     }

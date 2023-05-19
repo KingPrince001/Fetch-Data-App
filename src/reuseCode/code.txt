@@ -1,0 +1,64 @@
+import React, { useState, useEffect } from 'react';
+
+function App() {
+  const [data, setData] = useState([]);
+  const [country, setCountry] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`http://universities.hipolabs.com/search?country=${country}`);
+        const responseData = await response.json();
+        if (responseData.length > 0) {
+          setData(responseData);
+          setErrorMessage('');
+        } else {
+          setData([]);
+          setErrorMessage('No universities exist in this country.');
+        }
+      } catch (error) {
+        console.log('An error occurred', error);
+        setErrorMessage('An error occurred while fetching data.');
+      }
+    };
+
+    if (country !== '') {
+      fetchData();
+    }
+  }, [country]);
+
+  const handleChange = (event) => {
+    const searchParam = event.target.value;
+    setCountry(searchParam);
+  };
+
+  const handleSearch = () => {
+    if (country !== '') {
+      setCountry(country);
+    }
+  };
+
+  return (
+    <>
+      <button onClick={handleSearch}>Search</button>
+      <input type="text" onChange={handleChange} />
+      <button onClick={() => { setCountry(''); setData([]); }}>Clear</button>
+      {/* Render the data from the API */}
+      {errorMessage !== '' ? (
+        <p>{errorMessage}</p>
+      ) : (
+        data.map((university, index) => (
+          <div key={index}>
+            <p>Name: {university.name}</p>
+            <p>Country: {university.country}</p>
+            <p>Website: {university.web_pages[0]}</p>
+            <hr />
+          </div>
+        ))
+      )}
+    </>
+  );
+}
+
+export default App;
