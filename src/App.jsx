@@ -8,7 +8,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`https://universitiesapi.onrender.com/v1/api/universities=${country}`);
+      const response = await fetch(`https://universitiesapi.onrender.com/v1/api/universities/${country}`);
       const responseData = await response.json();
       if (responseData.length > 0) {
         setData(responseData);
